@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/BoldFellow/argocd.git
     targetRevision: HEAD
-    path: my-app
+    path: second-app
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:

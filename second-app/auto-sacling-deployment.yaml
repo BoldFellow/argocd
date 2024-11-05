@@ -19,26 +19,26 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
-      tolerations:
-      - key: instance_type
-        value: spot
-        effect: NoSchedule
-        operator: Equal
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: type
-                operator: In
-                values:
-                - spot
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - nginx
-            topologyKey: kubernetes.io/hostname
+      # tolerations:
+      # - key: instance_type
+      #   value: spot
+      #   effect: NoSchedule
+      #   operator: Equal
+      # affinity:
+      #   nodeAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #       nodeSelectorTerms:
+      #       - matchExpressions:
+      #         - key: type
+      #           operator: In
+      #           values:
+      #           - spot
+      #   podAntiAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #     - labelSelector:
+      #         matchExpressions:
+      #         - key: app
+      #           operator: In
+      #           values:
+      #           - nginx
+      #       topologyKey: kubernetes.io/hostname
